@@ -34,10 +34,12 @@ const PostDetailsClient = () => {
   if (!post) return <ErrorMessage message={"Post not found"} />;
 
   return (
-    <div className={css.container}>
-      <h1 className={css.title}>Post Details</h1>
-      <h2 className={css.subtitle}>{post.title}</h2>
-      <p className={css.body}>{post.body}</p>
+    <div className="container">
+      <div className={css.wrapper}>
+        <h1 className={css.title}>Post Details</h1>
+        <h2 className={css.subtitle}>{post.title}</h2>
+        <p className={css.body}>{post.body}</p>
+      </div>
     </div>
   );
 };

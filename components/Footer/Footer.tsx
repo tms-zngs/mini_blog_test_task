@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className={css.footer}>
-      <h2>© {year} Made by Tomas Zingis</h2>
+      <h2>© {year} Developed by Tomas Zingis</h2>
     </footer>
   );
 };

@@ -5,14 +5,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f0fdfa;
-  margin-bottom: 0.75rem;
+  background-color: #f7fefd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
 }
 
 .title {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   color: #0b4c45;
   flex-grow: 1;
 
