@@ -1,6 +1,6 @@
 "use client";
 
-import Loading from "@/app/loading";
+import Loading from "@/src/app/[locale]/loading";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import { getSinglePost } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";

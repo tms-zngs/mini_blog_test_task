@@ -1,7 +1,13 @@
 import Link from "next/link";
 import css from "./Header.module.css";
 
-const Header = () => {
+type Props = {
+  locale: "en" | "uk";
+};
+
+const Header = ({ locale }: Props) => {
+  const otherLocale = locale === "en" ? "uk" : "en";
+
   return (
     <header className={css.header}>
       <div className="container">
@@ -10,10 +16,13 @@ const Header = () => {
           <nav>
             <ul className={css.navigation}>
               <li>
-                <Link href="/">Home</Link>
+                <Link href={`/${locale}`}>Home</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link href={`/${locale}/about`}>About</Link>
+              </li>
+              <li className="locale">
+                <Link href={`/${otherLocale}`}>{otherLocale}</Link>
               </li>
             </ul>
           </nav>

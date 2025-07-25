@@ -6,7 +6,7 @@
 .headerContent {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 16px;
   box-sizing: border-box;
 }
 
@@ -39,6 +39,22 @@
   background-color: rgba(255 255 255 / 0.3);
 }
 
+/* Стили для переключателя локали */
+.locale a {
+  background-color: rgba(255 255 255 / 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.locale a:hover,
+.locale a:focus {
+  background-color: rgba(255 255 255 / 0.5);
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 1200px) {
   .title {
     font-size: 1.5rem;
@@ -46,6 +62,10 @@
 
   .navigation li a {
     font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .locale a {
     padding: 0.5rem 1rem;
   }
 }

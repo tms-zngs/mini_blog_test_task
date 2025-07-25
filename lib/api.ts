@@ -20,7 +20,7 @@ export const getPosts = async (): Promise<Post[]> => {
 
 export const getSinglePost = async (id: string): Promise<Post> => {
   try {
-    const response = await axios.get<Post>(`/postss/${id}`);
+    const response = await axios.get<Post>(`/posts/${id}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching post:", error);

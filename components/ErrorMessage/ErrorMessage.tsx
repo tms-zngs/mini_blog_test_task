@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import css from "./ErrorMessage.module.css";
 import { useUiStore } from "@/lib/store/LoadingStore";
-import Loading from "@/app/loading";
+import Loading from "@/src/app/[locale]/loading";
 
 type ErrorMessageProps = {
   message?: string;
