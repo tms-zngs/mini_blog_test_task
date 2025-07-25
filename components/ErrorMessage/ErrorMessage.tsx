@@ -3,50 +3,56 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import css from "./ErrorMessage.module.css";
+import { useUiStore } from "@/lib/store/LoadingStore";
+import Loading from "@/app/loading";
 
 type ErrorMessageProps = {
   message?: string;
-  onRetry?: () => void;
+  onRetry?: () => Promise<void> | void;
 };
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => {
   const router = useRouter();
+  const [localLoading, setLocalLoading] = React.useState(false);
+  const isGlobalLoading = useUiStore((state) => state.isLoading);
+
+  const handleRetry = async () => {
+    if (!onRetry) return;
+
+    setLocalLoading(true);
+    useUiStore.getState().setLoading(true);
+
+    try {
+      await onRetry();
+    } finally {
+      setLocalLoading(false);
+      useUiStore.getState().setLoading(false);
+    }
+  };
 
   return (
-    <div className={css.errorContainer} role="alert">
-      <svg
-        className={css.errorIcon}
-        fill="none"
-        viewBox="0 0 40 40"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="20" cy="20" r="18" />
-        <line x1="20" y1="12" x2="20" y2="24" />
-        <circle cx="20" cy="32" r="1" />
-      </svg>
-
-      <p style={{ margin: 0, fontWeight: "bold" }}>
-        {message || "Something went wrong. Please try again later."}
-      </p>
-
-      {onRetry && (
-        <button
-          className={css.retryButton}
-          onClick={onRetry}
-          aria-label="Retry loading"
-        >
-          Retry
-        </button>
-      )}
-
-      <div className={css.navigationButtons}>
-        <button onClick={() => router.back()} className={css.navButton}>
-          ← Back
-        </button>
-        <button onClick={() => router.push("/")} className={css.navButton}>
-          ⌂ Home
-        </button>
+    <div className="container">
+      <div className={css.errorContainer}>
+        <p className={css.errorMessage}>{message || "Something went wrong."}</p>
+        <div className={css.btns}>
+          {onRetry && (
+            <button
+              className={css.retryButton}
+              onClick={handleRetry}
+              disabled={localLoading || isGlobalLoading}
+            >
+              {localLoading || isGlobalLoading ? "Retrying..." : "Retry"}
+            </button>
+          )}
+          <button onClick={() => router.back()} className={css.navButton}>
+            ← Back
+          </button>
+        </div>
+        {(localLoading || isGlobalLoading) && (
+          <div className="loaderOverlay">
+            <Loading />
+          </div>
+        )}
       </div>
     </div>
   );

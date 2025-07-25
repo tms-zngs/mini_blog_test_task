@@ -6,7 +6,14 @@ const Home = async () => {
 
   return (
     <section className="container">
-      <h1 style={{ marginBottom: "1rem", fontWeight: "700", fontSize: "2rem" }}>
+      <h1
+        style={{
+          marginBottom: "1rem",
+          fontWeight: "700",
+          fontSize: "2rem",
+          color: "#3a3a3a",
+        }}
+      >
         Posts List
       </h1>
       {posts?.length > 0 ? <PostsList posts={posts} /> : <p>No posts found.</p>}

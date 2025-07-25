@@ -1,16 +1,16 @@
 .card {
   background-color: #f9f9f9;
-  padding: 2rem;
+  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin: 2rem auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
 }
 
 .title {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #0b4c45;
+  color: #3a3a3a;
 }
 
 .text {

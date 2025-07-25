@@ -5,7 +5,12 @@ axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
 
 export const getPosts = async (): Promise<Post[]> => {
   try {
-    const response = await axios.get<Post[]>("/posts");
+    const response = await axios.get<Post[]>("/posts", {
+      params: {
+        _start: 0,
+        _limit: 20,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -15,7 +20,7 @@ export const getPosts = async (): Promise<Post[]> => {
 
 export const getSinglePost = async (id: string): Promise<Post> => {
   try {
-    const response = await axios.get<Post>(`/posts/${id}`);
+    const response = await axios.get<Post>(`/postss/${id}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching post:", error);
