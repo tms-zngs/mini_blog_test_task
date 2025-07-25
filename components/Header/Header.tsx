@@ -1,12 +1,28 @@
+"use client";
+
 import Link from "next/link";
 import css from "./Header.module.css";
+import { useRouter, usePathname } from "next/navigation";
+
+const locales = ["en", "uk"];
 
 type Props = {
-  locale: "en" | "uk";
+  currentLocale: string;
 };
 
-const Header = ({ locale }: Props) => {
-  const otherLocale = locale === "en" ? "uk" : "en";
+const Header = ({ currentLocale }: Props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const switchLocale = (newLocale: string) => {
+    if (newLocale === currentLocale) return;
+
+    const segments = pathname.split("/");
+    segments[1] = newLocale;
+    const newPath = segments.join("/");
+
+    router.push(newPath);
+  };
 
   return (
     <header className={css.header}>
@@ -16,13 +32,19 @@ const Header = ({ locale }: Props) => {
           <nav>
             <ul className={css.navigation}>
               <li>
-                <Link href={`/${locale}`}>Home</Link>
+                <Link href={`/${currentLocale}`}>Home</Link>
               </li>
               <li>
-                <Link href={`/${locale}/about`}>About</Link>
+                <Link href={`/${currentLocale}/about`}>About</Link>
               </li>
               <li className="locale">
-                <Link href={`/${otherLocale}`}>{otherLocale}</Link>
+                {locales.map((locale) =>
+                  locale !== currentLocale ? (
+                    <button key={locale} onClick={() => switchLocale(locale)}>
+                      {locale.toUpperCase()}
+                    </button>
+                  ) : null
+                )}
               </li>
             </ul>
           </nav>
