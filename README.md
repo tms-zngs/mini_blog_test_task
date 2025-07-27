@@ -4,6 +4,27 @@ A simple and efficient blog platform for managing personal notes and posts — b
 
 ---
 
+## 🔧 Built With
+
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanStack_React_Query-FF4154?logo=react-query&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-000000?logo=zustand&logoColor=white)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-264de4?logo=css3&logoColor=white)
+![React Spinners](https://img.shields.io/badge/React_Spinners-0d1117?logo=react&logoColor=white)
+![next-intl](https://img.shields.io/badge/next--intl-007ACC?logo=language&logoColor=white)
+
+---
+
+## 👨‍💻 Made By
+
+**Tomas Zingis**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn--blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/tomas-zingis-dev/)
+
+---
+
 ## 🚀 Key Features
 
 - 🌍 **Internationalization (i18n)**  
@@ -38,22 +59,3 @@ A simple and efficient blog platform for managing personal notes and posts — b
 | **CSS Modules**           | —       | Modular and scoped styling            |
 
 ---
-
-## 🔧 Built With
-
-![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-![TanStack Query](https://img.shields.io/badge/TanStack_React_Query-FF4154?logo=react-query&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-000000?logo=zustand&logoColor=white)
-![CSS Modules](https://img.shields.io/badge/CSS_Modules-264de4?logo=css3&logoColor=white)
-![React Spinners](https://img.shields.io/badge/React_Spinners-0d1117?logo=react&logoColor=white)
-![next-intl](https://img.shields.io/badge/next--intl-007ACC?logo=language&logoColor=white)
-
----
-
-## 👨‍💻 Made By
-
-**Tomas Zingis**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn--blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/tomas-zingis-dev/)
