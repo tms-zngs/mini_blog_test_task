@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Mini Blog Application
 
-## Getting Started
+A simple and efficient blog platform for managing personal notes and posts — built with modern tools, strong performance principles, and internationalization support.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🌍 **Internationalization (i18n)**  
+  Seamlessly supports multiple languages with content and metadata translation via `next-intl`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ⚡ **Static Site Generation (SSG)**  
+  Boosts performance and SEO by pre-rendering pages at build time using Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🔀 **Dynamic Routing**  
+  Clean and scalable URL structure for blog post pages and dynamic content.
 
-## Learn More
+- 🔄 **Modern Data Fetching**  
+  Powered by `@tanstack/react-query` with intelligent caching and background updates.
 
-To learn more about Next.js, take a look at the following resources:
+- 📱 **Responsive Design**  
+  Styled with CSS Modules for scoped and maintainable component-level styling.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+| Technology                | Version | Purpose                               |
+| ------------------------- | ------- | ------------------------------------- |
+| **Next.js**               | v15.4.3 | SSR, SSG, routing, performance        |
+| **React & React DOM**     | v19.1.0 | UI library                            |
+| **TypeScript**            | —       | Type safety & maintainability         |
+| **next-intl**             | v4.3.4  | Internationalization                  |
+| **@tanstack/react-query** | v5.83.0 | Data fetching & state synchronization |
+| **Axios**                 | v1.11.0 | HTTP client for API calls             |
+| **Zustand**               | v5.0.6  | Lightweight global state management   |
+| **React Spinners**        | v0.17.0 | Loading UI components                 |
+| **CSS Modules**           | —       | Modular and scoped styling            |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Built With
+
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanStack_React_Query-FF4154?logo=react-query&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-000000?logo=zustand&logoColor=white)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-264de4?logo=css3&logoColor=white)
+![React Spinners](https://img.shields.io/badge/React_Spinners-0d1117?logo=react&logoColor=white)
+![next-intl](https://img.shields.io/badge/next--intl-007ACC?logo=language&logoColor=white)
+
+---
+
+## 👨‍💻 Made By
+
+**Tomas Zingis**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn--blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/tomas-zingis-dev/)
