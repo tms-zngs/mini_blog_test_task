@@ -1,5 +1,7 @@
 # 📝 Mini Blog Application
 
+Live Page: https://mini-blog-test-task.vercel.app/en
+
 A simple and efficient blog platform for managing personal notes and posts — built with modern tools, strong performance principles, and internationalization support.
 
 ---
