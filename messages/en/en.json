@@ -1,12 +1,30 @@
 {
+  "Header": {
+    "home": "Home",
+    "about": "About"
+  },
   "HomePage": {
     "title": "Posts List",
-    "noPostsFound": "No posts found."
+    "noPostsFound": "No posts found.",
+    "openPost": "Open Post"
   },
   "AboutPage": {
     "title": "About Us",
     "paragraph1": "This project is a simple demonstration of modern web development using Next.js, React, and TypeScript.",
     "paragraph2": "Designed with clarity and usability in mind, it reflects our commitment to clean and minimalistic UI.",
     "paragraph3": "Developed by Tomas Zingis."
+  },
+  "Footer": {
+    "developedBy": "Developed by Tomas Zingis"
+  },
+  "PostDetails": {
+    "title": "Post Details",
+    "btnText": "Go Back"
+  },
+  "ErrorMessage": {
+    "defaultMessage": "Something went wrong.",
+    "retry": "Retry",
+    "retrying": "Retrying...",
+    "back": "Back"
   }
 }

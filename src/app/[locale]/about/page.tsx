@@ -1,7 +1,16 @@
-import css from "./About.module.css";
+// app/[locale]/about/page.tsx
+// Не забудьте импортировать 'routing'
+import { routing } from "@/src/i18n/routing"; // Убедитесь, что этот путь верен
 import { getTranslations } from "next-intl/server";
+import css from "./About.module.css"; // Импортируйте свои стили для About
+
+// Добавьте generateStaticParams, как в Home
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 const AboutPage = async () => {
+  // Загружаем переводы напрямую в Server Component
   const t = await getTranslations("AboutPage");
 
   return (

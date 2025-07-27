@@ -9,10 +9,12 @@ import css from "./PostDetailsClient.module.css";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useUiStore } from "@/lib/store/LoadingStore";
+import { useTranslations } from "next-intl";
 
 const PostDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
+  const t = useTranslations("PostDetails");
 
   const setLoading = useUiStore((state) => state.setLoading);
   const setError = useUiStore((state) => state.setError);
@@ -37,12 +39,10 @@ const PostDetailsClient = () => {
     } else if (!isLoading && !isFetching) {
       setError(null);
       setLoading(false);
+    } else {
+      setLoading(true);
     }
   }, [error, isLoading, isFetching, setError, setLoading]);
-
-  useEffect(() => {
-    setLoading(isLoading || isFetching);
-  }, [isLoading, isFetching, setLoading]);
 
   if (errorMessage)
     return (
@@ -52,7 +52,7 @@ const PostDetailsClient = () => {
       />
     );
 
-  if (isLoading) return <Loading />;
+  if (isLoading || isFetching) return <Loading />;
 
   if (!post) return <ErrorMessage message="Post not found" />;
 
@@ -60,9 +60,9 @@ const PostDetailsClient = () => {
     <div className="container">
       <div className={css.wrapper}>
         <div className={css.headings}>
-          <h1 className={css.title}>Post Details</h1>
+          <h1 className={css.title}>{t("title")}</h1>
           <button onClick={() => router.back()} className={css.backBtn}>
-            Go Back
+            {t("btnText")}
           </button>
         </div>
         <h2 className={css.subtitle}>{post.title}</h2>

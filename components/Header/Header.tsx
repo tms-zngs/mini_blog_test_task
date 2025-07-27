@@ -3,6 +3,7 @@
 import Link from "next/link";
 import css from "./Header.module.css";
 import { useRouter, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const locales = ["en", "uk"];
 
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const Header = ({ currentLocale }: Props) => {
+  const t = useTranslations("Header");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -21,33 +23,37 @@ const Header = ({ currentLocale }: Props) => {
     segments[1] = newLocale;
     const newPath = segments.join("/");
 
-    router.push(newPath);
+    router.replace(newPath);
   };
+
+  const otherLocale =
+    locales.find((locale) => locale !== currentLocale) ?? currentLocale;
 
   return (
     <header className={css.header}>
       <div className="container">
         <div className={css.headerContent}>
-          <h2 className={css.title}>Mini Blog</h2>
-          <nav>
+          <nav className={css.nav}>
             <ul className={css.navigation}>
               <li>
-                <Link href={`/${currentLocale}`}>Home</Link>
+                <Link href={`/${currentLocale}`} className={css.titleLink}>
+                  Mini Blog
+                </Link>
               </li>
               <li>
-                <Link href={`/${currentLocale}/about`}>About</Link>
-              </li>
-              <li className="locale">
-                {locales.map((locale) =>
-                  locale !== currentLocale ? (
-                    <button key={locale} onClick={() => switchLocale(locale)}>
-                      {locale.toUpperCase()}
-                    </button>
-                  ) : null
-                )}
+                <Link href={`/${currentLocale}/about`}>{t("about")}</Link>
               </li>
             </ul>
           </nav>
+
+          <div>
+            <button
+              className={css.localeButton}
+              onClick={() => switchLocale(otherLocale)}
+            >
+              {otherLocale === "en" ? "Eng" : "Укр"}
+            </button>
+          </div>
         </div>
       </div>
     </header>

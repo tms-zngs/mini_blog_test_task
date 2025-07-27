@@ -6,14 +6,13 @@
 .headerContent {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-around;
   box-sizing: border-box;
+  gap: 16px;
 }
 
-.title {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
+.nav {
+  flex-grow: 1;
 }
 
 .navigation {
@@ -21,51 +20,67 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 16px;
 }
 
-.navigation li a {
+.navigation li {
+  flex-shrink: 0;
+}
+
+.titleLink {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.titleLink:hover,
+.titleLink:focus {
+  text-decoration: underline;
+}
+
+.navigation li a,
+.localeButton {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 0.25rem 0.5rem;
+  font-size: 16px;
+  padding: 4px 10px;
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation li a:hover,
-.navigation li a:focus {
-  background-color: rgba(255 255 255 / 0.3);
+.navigation li a:focus,
+.localeButton:hover,
+.localeButton:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
 }
 
-/* Стили для переключателя локали */
-.locale a {
-  background-color: rgba(255 255 255 / 0.2);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-weight: 700;
+.localeButton {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
   cursor: pointer;
-  transition: background-color 0.25s ease;
-}
-
-.locale a:hover,
-.locale a:focus {
-  background-color: rgba(255 255 255 / 0.5);
-  text-decoration: underline;
 }
 
 @media screen and (min-width: 1200px) {
-  .title {
-    font-size: 1.5rem;
+  .headerContent {
+    justify-content: space-between;
   }
 
-  .navigation li a {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+  .nav {
+    flex-grow: 0;
   }
 
-  .locale a {
-    padding: 0.5rem 1rem;
+  .titleLink {
+    font-size: 24px;
+  }
+
+  .navigation li a,
+  .localeButton {
+    font-size: 18px;
+    padding: 8px 16px;
   }
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import css from "./ErrorMessage.module.css";
 import { useUiStore } from "@/lib/store/LoadingStore";
 import Loading from "@/src/app/[locale]/loading";
+import { useTranslations } from "next-intl";
 
 type ErrorMessageProps = {
   message?: string;
@@ -15,6 +16,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => {
   const router = useRouter();
   const [localLoading, setLocalLoading] = React.useState(false);
   const isGlobalLoading = useUiStore((state) => state.isLoading);
+  const t = useTranslations("ErrorMessage");
 
   const handleRetry = async () => {
     if (!onRetry) return;
@@ -33,7 +35,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => {
   return (
     <div className="container">
       <div className={css.errorContainer}>
-        <p className={css.errorMessage}>{message || "Something went wrong."}</p>
+        <p className={css.errorMessage}>{message || t("defaultMessage")}</p>
         <div className={css.btns}>
           {onRetry && (
             <button
@@ -41,11 +43,11 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => {
               onClick={handleRetry}
               disabled={localLoading || isGlobalLoading}
             >
-              {localLoading || isGlobalLoading ? "Retrying..." : "Retry"}
+              {localLoading || isGlobalLoading ? t("retrying") : t("retry")}
             </button>
           )}
           <button onClick={() => router.back()} className={css.navButton}>
-            ← Back
+            ← {t("back")}
           </button>
         </div>
         {(localLoading || isGlobalLoading) && (
