@@ -4,6 +4,7 @@ import { routing } from "@/src/i18n/routing"; // Убедитесь, что эт
 import { getTranslations } from "next-intl/server";
 import css from "./About.module.css"; // Импортируйте свои стили для About
 
+export const dynamic = "force-static";
 // Добавьте generateStaticParams, как в Home
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
