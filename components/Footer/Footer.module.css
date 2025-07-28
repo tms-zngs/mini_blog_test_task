@@ -12,10 +12,10 @@
   user-select: none;
   box-shadow:
     0 -1px 5px rgba(0, 0, 0, 0.05),
-    /* лёгкая тень снизу */ 0 6px 16px rgba(0, 0, 0, 0.12); /* мягкая воздушная тень, как у .card */
+    0 6px 16px rgba(0, 0, 0, 0.12);
   z-index: 1000;
   line-height: 1.2;
-  border-top: none; /* убираем границу */
+  border-top: none;
 }
 
 @media screen and (min-width: 1200px) {
