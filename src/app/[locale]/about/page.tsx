@@ -1,7 +1,11 @@
 import { routing } from "@/src/i18n/routing";
-import { getTranslations } from "next-intl/server";
-import css from "./About.module.css";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
+import css from "./About.module.css";
+
+interface AboutPageProps {
+  params: Promise<{ locale: string }>;
+}
 
 export const dynamic = "force-static";
 
@@ -30,11 +34,14 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const AboutPage = async () => {
+const AboutPage = async ({ params }: AboutPageProps) => {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("AboutPage");
 
   return (
