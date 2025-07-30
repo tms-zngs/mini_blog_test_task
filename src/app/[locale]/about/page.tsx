@@ -7,8 +7,6 @@ interface AboutPageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const dynamic = "force-static";
-
 const BASE_URL =
   "https://mini-blog-test-task-ko6d9tx0a-tomas-zingis-projects.vercel.app";
 
